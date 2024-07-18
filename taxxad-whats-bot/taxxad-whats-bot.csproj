@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <RootNamespace>taxxad_whats_bot</RootNamespace>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Easy.Automation" Version="1.0.0.12" />
+      <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="126.0.6478.18200" />
+    </ItemGroup>
+
+</Project>
