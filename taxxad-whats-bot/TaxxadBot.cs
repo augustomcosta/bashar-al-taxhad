@@ -44,6 +44,8 @@ public class TaxxadBot : Web
         var random = new Random();
 
         var delayTime = random.Next(15,300);
+        
+        Console.WriteLine($"Delay time was set for {delayTime} minutes");
             
         await Task.Delay(TimeSpan.FromMinutes(delayTime));
     }
