@@ -4,13 +4,11 @@ using OpenQA.Selenium;
 namespace taxxad_whats_bot;
 public class TaxxadBot : Web
 {
-    public async Task SendMessageWithImage()
+    public async Task SendMessageWithImage(CancellationToken cts)
     {
-        while (true)
+        while (!cts.IsCancellationRequested)
         {
-            await Task.Delay(TimeSpan.FromMinutes(60));
-            
-            StartBrowser(TypeDriver.GoogleChorme, PathVariables.CachePath);
+            StartBrowser(PathVariables.BrowserDriver, PathVariables.CachePath);
         
             Navigate(PathVariables.WhatsAppUrl);
         
@@ -35,7 +33,7 @@ public class TaxxadBot : Web
             
             CloseBrowser();
             
-            return;
+            await Task.Delay(TimeSpan.FromMinutes(60));
         }
     }
 

@@ -3,10 +3,11 @@
 Console.WriteLine("Bot started...");
 
 var bot = new TaxxadBot();
+var cts = new CancellationToken();
 try
 {
     Console.WriteLine("باسهارالـتاسهاد Bashar al-taxhad");
-    await bot.SendMessageWithImage();
+    await bot.SendMessageWithImage(cts);
 }
 catch (OperationCanceledException)
 {
