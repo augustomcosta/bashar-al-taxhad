@@ -9,15 +9,8 @@ try
     Console.WriteLine("باسهارالـتاسهاد Bashar al-taxhad");
     await bot.SendMessageWithImage(cts);
 }
-catch (OperationCanceledException)
+catch (Exception e)
 {
-    Console.WriteLine("Operation cancelled");
-}
-catch (Exception ex)
-{
-    Console.WriteLine($"Unexpected error: {ex.Message},{ex.StackTrace}");
-}
-finally
-{
-    Console.WriteLine("Bot shut down");
+    if (e is OperationCanceledException) Console.WriteLine($"Bot operation was terminated: {e.Message}");
+    Console.WriteLine(e.StackTrace);
 }

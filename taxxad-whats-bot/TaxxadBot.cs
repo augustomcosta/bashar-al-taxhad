@@ -34,11 +34,19 @@ public class TaxxadBot : Web
             Thread.Sleep(TimeSpan.FromSeconds(5));
             
             CloseBrowser();
-            
-            await Task.Delay(TimeSpan.FromMinutes(60));
+
+            await GenerateRandomDelayTime();
         }
     }
 
+    private static async Task GenerateRandomDelayTime()
+    {
+        var random = new Random();
+
+        var delayTime = random.Next(15,300);
+            
+        await Task.Delay(TimeSpan.FromMinutes(delayTime));
+    }
     private static string GetRandomFile()
     {
         var remainingFiles = new List<string>(Directory.GetFiles(PathVariables.ImagesFolder, "*.jpg"));
