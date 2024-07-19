@@ -14,7 +14,7 @@ public class TaxxadBot : Web
         
             WaitForLoad();
         
-            Thread.Sleep(TimeSpan.FromSeconds(4));
+            Thread.Sleep(TimeSpan.FromSeconds(5));
             
             var imagePath = GetRandomFile();
             
@@ -30,6 +30,8 @@ public class TaxxadBot : Web
             var elementInput = AssignValue(TypeElement.Xpath, PathVariables.ImageDescription, PathVariables.Message);
 
             elementInput.element.SendKeys(Keys.Enter);
+            
+            Thread.Sleep(TimeSpan.FromSeconds(5));
             
             CloseBrowser();
             
